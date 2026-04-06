@@ -566,9 +566,13 @@
         <a href="https://discord.gg/zj2AMXbuKu" data-discord class="contact-link-item">
           <div class="link-icon">💬</div><div><div class="link-label">Discord</div><div class="link-value" id="discord-label">discord.gg/zj2AMXbuKu</div></div>
         </a>
-        <a href="javascript:void(0)" onclick="window.location.href='mai'+'lto:pa'+'lo@pa'+'lomasgaming.com'" class="contact-link-item">
-          <div class="link-icon">📧</div><div><div class="link-label">Email</div><div class="link-value" id="email-display">palo&#64;palomasgaming&#46;com</div></div>
-        </a>
+        <div class="contact-link-item" style="cursor:default;">
+          <div class="link-icon">📧</div>
+          <div>
+            <div class="link-label">Email</div>
+            <div class="link-value" id="email-display">Cargando...</div>
+          </div>
+        </div>
       </div>
     </div>
     <div class="form" id="contact-form">
@@ -891,11 +895,20 @@ async function enviarFormulario() {
   btn.disabled = false;
 }
 
+// ── EMAIL DISPLAY (split to avoid Cloudflare detection) ─────────
+function showEmail() {
+  const el = document.getElementById('email-display');
+  if (!el) return;
+  const parts = ['pal', 'o', '@', 'palomas', 'gaming', '.com'];
+  el.textContent = parts.join('');
+}
+
 // ── INIT ────────────────────────────────────────────────────────
 loadChannelStats();
 renderTorneos();
 renderTestimonios();
 renderContactLinks();
+showEmail();
 setInterval(loadChannelStats, 5 * 60 * 1000);
 </script>
 </body>
