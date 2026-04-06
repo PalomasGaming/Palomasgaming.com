@@ -537,14 +537,7 @@
   <div class="section-eyebrow">Compite y gana</div>
   <h2>TORNEOS</h2>
   <p class="section-sub">Competencias organizadas para la comunidad Palo+. Demuestra quién manda en Teleria.</p>
-  <div class="torneo-list" id="torneos-list">
-    <div class="torneo-item">
-      <span class="t-type">Arena</span>
-      <div class="t-name">COPA PALO+ — TEMPORADA 1</div>
-      <div class="t-prize">Por definir</div>
-      <span class="t-badge pending">◑ Pendiente</span>
-    </div>
-  </div>
+  <div class="torneo-list" id="torneos-list"></div>
 </section>
 
 <div class="rune-divider"><span class="rune-symbol">✦</span></div>
@@ -553,33 +546,8 @@
 <section id="testimonios">
   <div class="section-eyebrow">La comunidad habla</div>
   <h2>TESTIMONIOS</h2>
-  <p class="section-sub">Comentarios reales de la comunidad. Reemplaza el texto de cada tarjeta con comentarios reales de tu YouTube.</p>
-  <div class="testimonials-grid" id="testimonios-grid">
-    <div class="testi-card">
-      <div class="testi-stars">★★★★★</div>
-      <p class="testi-text">[ Pega aquí un comentario real de tu YouTube — cópialo directamente de los comentarios de cualquiera de tus videos ]</p>
-      <div class="testi-author">
-        <div class="testi-avatar av1">U1</div>
-        <div><div class="testi-name">NOMBRE_USUARIO</div><div class="testi-rank">Comentario en YouTube</div></div>
-      </div>
-    </div>
-    <div class="testi-card">
-      <div class="testi-stars">★★★★★</div>
-      <p class="testi-text">[ Pega aquí un segundo comentario real de tu YouTube ]</p>
-      <div class="testi-author">
-        <div class="testi-avatar av2">U2</div>
-        <div><div class="testi-name">NOMBRE_USUARIO</div><div class="testi-rank">Comentario en YouTube</div></div>
-      </div>
-    </div>
-    <div class="testi-card">
-      <div class="testi-stars">★★★★★</div>
-      <p class="testi-text">[ Pega aquí un tercer comentario real de tu YouTube ]</p>
-      <div class="testi-author">
-        <div class="testi-avatar av3">U3</div>
-        <div><div class="testi-name">NOMBRE_USUARIO</div><div class="testi-rank">Comentario en YouTube</div></div>
-      </div>
-    </div>
-  </div>
+  <p class="section-sub">Lo que dice la comunidad Palomas Gaming.</p>
+  <div class="testimonials-grid" id="testimonios-grid"></div>
 </section>
 
 <div class="rune-divider"><span class="rune-symbol">⚔</span></div>
@@ -919,4 +887,16 @@ async function enviarFormulario() {
     document.getElementById('form-success').style.display = 'none';
   }
 
-  btn.textContent = 'Enviar Men
+  btn.textContent = 'Enviar Mensaje ➜';
+  btn.disabled = false;
+}
+
+// ── INIT ────────────────────────────────────────────────────────
+loadChannelStats();
+renderTorneos();
+renderTestimonios();
+renderContactLinks();
+setInterval(loadChannelStats, 5 * 60 * 1000);
+</script>
+</body>
+</html>
